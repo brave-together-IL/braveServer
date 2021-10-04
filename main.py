@@ -19,7 +19,7 @@ try:
 except psycopg2.errors.UndefinedTable:
     print("Creating table users...")
     connection.rollback()
-    cursor.execute('CREATE TABLE users (fullname varchar(50), city varchar(50), identity varchar(10), password varchar(50), phone varchar(12), role int, id SERIAL PRIMARY KEY)')
+    cursor.execute('CREATE TABLE users (fullname varchar(50), city varchar(50), identity varchar(10), password text, phone varchar(12), role int, id SERIAL PRIMARY KEY)')
     connection.commit()
 
 # try:

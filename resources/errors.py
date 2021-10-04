@@ -12,7 +12,7 @@ class PasswordIsTooShort(HTTPException):
     pass
 
 
-class EmailAlreadyTaken(HTTPException):
+class PhoneAlreadyTaken(HTTPException):
     pass
 
 
@@ -66,15 +66,15 @@ class InvalidUser(HTTPException):
 
 errors = {
     "NoSuchUser": {
-        "message": "No user was found with the given ID",
+        "message": "No user was found with the given data",
         "status": HTTPStatus.NOT_FOUND
     },
     "PasswordIsTooShort": {
         "message": "Given password is shorter than 10 characters",
         "status": HTTPStatus.BAD_REQUEST
     },
-    "EmailAlreadyTaken": {
-        "message": "This email is taken",
+    "PhoneAlreadyTaken": {
+        "message": "This phone is taken",
         "status": HTTPStatus.BAD_REQUEST
     },
     "InvalidAPIToken": {
