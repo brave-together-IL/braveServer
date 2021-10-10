@@ -64,6 +64,10 @@ class InvalidUser(HTTPException):
     pass
 
 
+class InvalidTitleForEvent(HTTPException):
+    pass
+
+
 errors = {
     "NoSuchUser": {
         "message": "No user was found with the given data",
@@ -71,6 +75,10 @@ errors = {
     },
     "PasswordIsTooShort": {
         "message": "Given password is shorter than 10 characters",
+        "status": HTTPStatus.BAD_REQUEST
+    },
+    "InvalidTitleForEvent": {
+        "message": "Please add title to the event",
         "status": HTTPStatus.BAD_REQUEST
     },
     "PhoneAlreadyTaken": {
